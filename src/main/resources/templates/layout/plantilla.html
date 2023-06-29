@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">  
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <header th:fragment="header">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" th:href="@{/}">CONSUMO DE SERVICIO WEB</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/listadoProductos}">LISTADO DE PRODUCTOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/listadoProveedores}">LISTADO DE PROVEEDORES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/listadoCategorias}">LISTADO DE CATEGORIAS</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        
+        <div th:fragment="principal">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="mt-5">PROYECTO DESARROLLO DE SERVICIOS WEB II</h1>
+                <p>El presente proyecto tiene como objetivo la implementacion de una aplicacion web que consuma un servicio</p>
+            </div>
+        </div>
+        </div>
+        
+        <footer th:fragment="footer">
+             <a href="https://github.com/RenzzoPalomino" target="_blank"><i class="fab fa-github fa-lg" style="color: #000000;"></i></a>
+             <a href="https://www.linkedin.com/in/renzzopv/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></i></a>
+             
+        </footer>
+    </body>
+</html>

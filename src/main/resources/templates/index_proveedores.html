@@ -1,0 +1,45 @@
+<!DOCTYPE html><html xmlns:="http//www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Listado de Categorias</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    </head>
+    <body> 
+        <div class="container">
+               <header th:replace="layout/plantilla :: header " ></header>
+
+            <br><br> 
+        <a class="btn btn-primary" role="button" th:href="@{/agregarProveedor}"> Nuevo Proveedor</a>
+       <br><br>
+        <div th:if="${proveedores != null and proveedores.length > 0}">
+            <table class="table table-hover">    
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Acciones</th>
+                        
+                    </tr> 
+                </thead>
+                <tbody>
+                   <tr th:each="Proveedor:${proveedores}">
+                        <td th:text="${Proveedor.nombre}"></td>
+                        
+                                               <td>
+                           <a th:href="@{/editarProveedor/}     + ${Proveedor.cod_proveedor}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                           <a th:href="@{/eliminarProveedor/}   + ${Proveedor.cod_proveedor}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                  
+                        </td>
+                    </tr>
+                </tbody>     
+                    
+            </table>
+        </div>
+             <div th:if="${proveedores.length ==0}">
+                La lista de categorias está vacía.
+        </div>
+                    <footer th:replace="layout/plantilla :: footer " ></footer>
+</div>
+    </body>
+</html>
